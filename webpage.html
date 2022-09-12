@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container li {
+        margin: 10px;
+        text-decoration: none;
+        list-style: none;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>LoremTo DoListum</h1>
+        <ul>
+        </ul>
+    </div>
+</body>
+<script>
+    const randomIpsum = ["Lorem", "ipsum", "dolor", "sit", "amet,", "consectetur", "adipiscing", "elit,", "sed", "do", "eiusmod", "tempor", "incididunt", "ut", "labore", "et", "dolore", "magna", "aliqua.", "Ut", "enim", "ad", "minim", "veniam,", "quis", "nostrud", "exercitation", "ullamco", "laboris", "nisi", "ut", "aliquip", "ex", "ea", "commodo", "consequat.", "Duis", "aute", "irure", "dolor", "in", "reprehenderit", "in", "voluptate", "velit", "esse", "cillum", "dolore", "eu", "fugiat", "nulla", "pariatur.", "Excepteur", "sint", "occaecat", "cupidatat", "non", "proident,", "sunt", "in", "culpa", "qui", "officia", "deserunt", "mollit", "anim", "id", "est", "laborum."]
+    // add random ipsum to the list
+    const list = document.querySelector('ul')
+    for (let i = 0; i < 10; i++) {
+        const randomIndex = Math.floor(Math.random() * randomIpsum.length)
+        const randomWord = randomIpsum[randomIndex]
+        const checkboxTemplateString = `
+            <li>
+                <input type="checkbox" id="checkbox-${i}">
+                <label for="checkbox-${i}">${randomWord}</label>
+            </li>
+        `
+        list.insertAdjacentHTML('beforeend', checkboxTemplateString)
+    }
+
+</script>
+<script src="lorem-ipsum.js"></script>
+
+</html>
