@@ -1,7 +1,7 @@
 
 
 // use me like this 
-// node random-string.ts 1000
+// node random-string.js 1000
 
 const length = process.argv[2];
 
